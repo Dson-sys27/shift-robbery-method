@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="SpriteFrames" path="res://Resources/Characters/adam_frames.tres" id="2_6t5aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
+size = Vector2(10, 6)
+
+[node name="Player" type="CharacterBody2D" unique_id=571083691 groups=["player"]]
+motion_mode = 1
+script = ExtResource("1_cvnsp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1194574169]
+position = Vector2(0, -16)
+sprite_frames = ExtResource("2_6t5aa")
+animation = &"idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693274141]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_vgqql")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1091105885]
+position = Vector2(0, -12)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
