@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cggjp5bu31b3w"]
+
+[ext_resource type="PackedScene" uid="uid://gx853jvc84lw" path="res://Scenes/scenario/casino.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" path="res://Scenes/player/player.tscn" id="2_8gbba"]
+
+[node name="Main" type="Node2D" unique_id=1017417955]
+
+[node name="Casino" parent="." unique_id=2045220034 groups=["scenario"] instance=ExtResource("1_bo1nx")]
+
+[node name="Player" parent="." unique_id=571083691 instance=ExtResource("2_8gbba")]

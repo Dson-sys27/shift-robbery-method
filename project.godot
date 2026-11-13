@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="shift-robbery-method"
-run/main_scene="res://Scenes/casino.tscn"
+run/main_scene="uid://cggjp5bu31b3w"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://msk48r804vvy"
 
 [display]
 
@@ -23,9 +27,14 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
+"res://Scenes/": "blue",
 "res://Scripts/": "yellow",
 "res://Textures/": "green"
 }
+
+[global_group]
+
+scenario=""
 
 [input]
 

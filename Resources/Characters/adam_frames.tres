@@ -1,7 +1,7 @@
-[gd_resource type="SpriteFrames" format=3]
+[gd_resource type="SpriteFrames" format=3 uid="uid://qbpkxf542cat"]
 
-[ext_resource type="Texture2D" path="res://Textures/Characters/Adam_idle_anim_16x16.png" id="1_jfw4l"]
-[ext_resource type="Texture2D" path="res://Textures/Characters/Adam_run_16x16.png" id="2_cmec0"]
+[ext_resource type="Texture2D" uid="uid://hr6qabsuhkig" path="res://Textures/Characters/Adam_idle_anim_16x16.png" id="1_jfw4l"]
+[ext_resource type="Texture2D" uid="uid://cibqtbpd0of7o" path="res://Textures/Characters/Adam_run_16x16.png" id="2_cmec0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxyfw"]
 atlas = ExtResource("1_jfw4l")

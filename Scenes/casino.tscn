@@ -1,20 +1,20 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://85q3lixhbocg"]
 
-[ext_resource type="TileSet" path="res://Resources/museo_tileset.tres" id="1_tileset"]
-[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="2_player"]
+[ext_resource type="TileSet" uid="uid://chi31ewp6lkfo" path="res://Resources/museo_tileset.tres" id="1_tileset"]
+[ext_resource type="PackedScene" path="res://Scenes/player/player.tscn" id="2_player"]
 
-[node name="Museo" type="Node2D"]
+[node name="Museo" type="Node2D" unique_id=815761190]
 
-[node name="Suelo" type="TileMapLayer" parent="."]
+[node name="Suelo" type="TileMapLayer" parent="." unique_id=86697969]
 tile_set = ExtResource("1_tileset")
 
-[node name="Paredes" type="TileMapLayer" parent="."]
+[node name="Paredes" type="TileMapLayer" parent="." unique_id=617660581]
 tile_set = ExtResource("1_tileset")
 
-[node name="Bordes" type="TileMapLayer" parent="."]
+[node name="Bordes" type="TileMapLayer" parent="." unique_id=151959690]
 tile_set = ExtResource("1_tileset")
 
-[node name="Objetos" type="Node2D" parent="."]
+[node name="Objetos" type="Node2D" parent="." unique_id=821483550]
 y_sort_enabled = true
 
-[node name="Player" parent="Objetos" instance=ExtResource("2_player")]
+[node name="Player" parent="Objetos" unique_id=1363619654 instance=ExtResource("2_player")]
