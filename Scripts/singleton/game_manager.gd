@@ -3,6 +3,8 @@ extends Node
 var map_size : int
 var exp_mult : float
 var game_state : GAME_STATE
+var bounty : int
+var noise : FastNoiseLite
 #Const
 const MIN_SIZE : int = 20
 const TILE_SIZE: int  = 16
@@ -32,6 +34,7 @@ func _ready() -> void:
 	map_size = MIN_SIZE + (randi() % 11)
 	exp_mult = map_size / 10
 	game_state = GAME_STATE.starting
+	bounty = 0
 	create_terrain()
 func _process(delta: float) -> void:
 	pass	
@@ -43,8 +46,8 @@ func create_terrain() -> void:
 			var pattern : TileMapPattern
 			tile_pos = Vector2i(x, y)
 			pattern_index = get_pattern_from_pos(x, y)
-			pattern = casino_layer.tile_set.get_pattern(pattern_index)
 			if(pattern_index != -1):
+				pattern = casino_layer.tile_set.get_pattern(pattern_index)
 				casino_layer.set_pattern(tile_pos, pattern)
 func check_if_loaded() -> void:
 	if(
@@ -73,3 +76,6 @@ func get_pattern_from_pos(x : int, y : int) -> int:
 	else:
 		index = -1
 	return index
+
+func step_state() -> void:
+	pass

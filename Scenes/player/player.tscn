@@ -1,12 +1,13 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://kwwmtnrs23lq"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="SpriteFrames" path="res://Resources/Characters/adam_frames.tres" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://d3y0mq0fw1l01" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="SpriteFrames" uid="uid://qbpkxf542cat" path="res://Resources/Characters/adam_frames.tres" id="2_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(10, 6)
 
 [node name="Player" type="CharacterBody2D" unique_id=571083691 groups=["player"]]
+z_index = 1
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 

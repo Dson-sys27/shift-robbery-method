@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://5ymvg6bxnrxr"]
 
 [ext_resource type="Texture2D" uid="uid://ccpb3ra5ks1tk" path="res://Textures/casino_assets/2D Top Down Pixel Art Tileset Casino/Animated Sprite Sheets/SlotMachinesAnimationSheet_1.png" id="1_6yi46"]
+[ext_resource type="Script" uid="uid://clijb3co8jg1o" path="res://Scripts/interactions/slot_machine.gd" id="1_dmxyd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmxyd"]
 atlas = ExtResource("1_6yi46")
@@ -74,10 +75,6 @@ region = Rect2(240, 0, 16, 44)
 atlas = ExtResource("1_6yi46")
 region = Rect2(96, 0, 16, 44)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v0u7w"]
-atlas = ExtResource("1_6yi46")
-region = Rect2(112, 0, 16, 44)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_6pmnr"]
 animations = [{
 "frames": [{
@@ -106,9 +103,18 @@ animations = [{
 "texture": SubResource("AtlasTexture_houic")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_shawc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_houic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shawc")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_houic")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"loser",
 "speed": 5.0
 }, {
@@ -116,7 +122,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v2t6d")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"off",
 "speed": 5.0
 }, {
@@ -149,9 +155,18 @@ animations = [{
 "texture": SubResource("AtlasTexture_yg5nx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v0u7w")
+"texture": SubResource("AtlasTexture_irgc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg5nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irgc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg5nx")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"winner",
 "speed": 5.0
 }]
@@ -159,7 +174,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pmnr"]
 size = Vector2(16, 24)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6pmnr"]
+radius = 14.035668
+
 [node name="slot_machine" type="StaticBody2D" unique_id=33001022]
+z_index = 2
+script = ExtResource("1_dmxyd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1522656034]
 position = Vector2(8, 22)
@@ -169,3 +189,15 @@ animation = &"winner"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=955518]
 position = Vector2(8, 31)
 shape = SubResource("RectangleShape2D_6pmnr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1714081507]
+position = Vector2(-1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=972203881]
+z_index = 2
+position = Vector2(9, 43)
+scale = Vector2(0.6800009, 0.88)
+shape = SubResource("CircleShape2D_6pmnr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

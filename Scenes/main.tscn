@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://cggjp5bu31b3w"]
 
 [ext_resource type="PackedScene" uid="uid://gx853jvc84lw" path="res://Scenes/scenario/casino.tscn" id="1_bo1nx"]
-[ext_resource type="PackedScene" path="res://Scenes/player/player.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://kwwmtnrs23lq" path="res://Scenes/player/player.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://5ymvg6bxnrxr" path="res://Scenes/prefabs/animated/slot_machine.tscn" id="3_8gbba"]
 
 [node name="Main" type="Node2D" unique_id=1017417955]
 
 [node name="Casino" parent="." unique_id=2045220034 groups=["scenario"] instance=ExtResource("1_bo1nx")]
 
 [node name="Player" parent="." unique_id=571083691 instance=ExtResource("2_8gbba")]
+position = Vector2(163, 102)
+
+[node name="slot_machine" parent="." unique_id=33001022 instance=ExtResource("3_8gbba")]
+position = Vector2(98, 66)
