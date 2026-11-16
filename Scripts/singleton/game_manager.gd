@@ -23,9 +23,11 @@ enum GAME_STATE{
 	improvising,
 	end_match
 }
+const SLOT_MACHINE : PackedScene = preload("res://Scenes/prefabs/animated/slot_machine.tscn")
+const  REFILL_TABLE : PackedScene = preload("res://Scenes/prefabs/animated/refill_table.tscn")
 #Nodes
 @onready var casino_layer : TileMapLayer = get_tree().get_first_node_in_group("scenario")
-@onready var player : CharacterBody2D = $Player
+@onready var player : CharacterBody2D = get_tree().get_first_node_in_group("player")
 #Source
 func _ready() -> void:
 	#Initializing when first round starts
@@ -36,6 +38,7 @@ func _ready() -> void:
 	game_state = GAME_STATE.starting
 	bounty = 0
 	create_terrain()
+
 func _process(delta: float) -> void:
 	pass	
 func create_terrain() -> void:
@@ -54,9 +57,10 @@ func check_if_loaded() -> void:
 		casino_layer
 		and player
 	):
-		pass
-	else:
 		game_state = GAME_STATE.searching
+	else:
+		pass
+		
 func get_pattern_from_pos(x : int, y : int) -> int:
 	var index : int = 0
 	if((x == map_size - 1)):
@@ -76,6 +80,5 @@ func get_pattern_from_pos(x : int, y : int) -> int:
 	else:
 		index = -1
 	return index
-
 func step_state() -> void:
 	pass

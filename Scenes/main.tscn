@@ -3,13 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://gx853jvc84lw" path="res://Scenes/scenario/casino.tscn" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://kwwmtnrs23lq" path="res://Scenes/player/player.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://5ymvg6bxnrxr" path="res://Scenes/prefabs/animated/slot_machine.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dy353gf3ic1r2" path="res://Scenes/prefabs/animated/refill_table.tscn" id="4_jjvhh"]
 
 [node name="Main" type="Node2D" unique_id=1017417955]
+y_sort_enabled = true
 
 [node name="Casino" parent="." unique_id=2045220034 groups=["scenario"] instance=ExtResource("1_bo1nx")]
 
 [node name="Player" parent="." unique_id=571083691 instance=ExtResource("2_8gbba")]
+z_index = 0
+y_sort_enabled = true
 position = Vector2(163, 102)
 
 [node name="slot_machine" parent="." unique_id=33001022 instance=ExtResource("3_8gbba")]
-position = Vector2(98, 66)
+z_index = 0
+y_sort_enabled = true
+position = Vector2(174, 123)
+
+[node name="refill_table" parent="." unique_id=1986482422 instance=ExtResource("4_jjvhh")]
+position = Vector2(94, 133)
