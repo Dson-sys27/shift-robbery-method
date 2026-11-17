@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+TerrainGenerator="*uid://38sosii5pjmu"
 GameManager="*uid://msk48r804vvy"
 
 [display]
