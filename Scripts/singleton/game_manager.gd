@@ -22,8 +22,10 @@ const  REFILL_TABLE : PackedScene = preload("res://Scenes/prefabs/animated/refil
 #Source
 func _ready() -> void:
 	#Initializing when first round starts
-	while(game_state == GAME_STATE.starting):
-		check_if_loaded()
+	check_if_loaded()
+	# Skip setup when the casino scene is not loaded (e.g. the run flow starts at the menu).
+	if game_state != GAME_STATE.searching:
+		return
 	map_size = get_new_size()
 	TerrainGenerator.map_size = map_size
 	exp_mult = get_new_exp_mult()

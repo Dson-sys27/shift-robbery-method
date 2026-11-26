@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="shift-robbery-method"
-run/main_scene="uid://cggjp5bu31b3w"
+run/main_scene="res://Scenes/phases/phase_placeholder.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
+RunManager="*res://Scripts/core/run_manager.gd"
 TerrainGenerator="*uid://38sosii5pjmu"
 GameManager="*uid://msk48r804vvy"
 
