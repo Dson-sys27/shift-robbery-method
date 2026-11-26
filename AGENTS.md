@@ -12,6 +12,7 @@ one of several agents committing to the same repository.
 |---|---|---|
 | Game design (GDD) | [`docs/GDD_SHIFT_Methods_for_Robbery.md`](docs/GDD_SHIFT_Methods_for_Robbery.md) | Spanish |
 | Coordination rules (this file) | `AGENTS.md` | English |
+| Work split (owners, folders, contracts) | [`docs/WORK_SPLIT.md`](docs/WORK_SPLIT.md) | Spanish |
 | Code, comments, node names, file names, commit messages | the repo | **English** |
 | Conversation with your human | — | Spanish |
 
@@ -49,7 +50,7 @@ raise it with your human.
 ## 4. Repository layout
 
 ```
-docs/                    GDD (Spanish)
+docs/                    GDD and WORK_SPLIT.md (work split), both in Spanish
 Scripts/core/            Run flow: RunManager (autoload), RunLog
 Scripts/phases/          Phase screens (currently one placeholder)
 Scripts/singleton/       Prototype autoloads: GameManager, TerrainGenerator
@@ -115,23 +116,21 @@ Because six people push to the same branch, follow these rules strictly:
 
 - The project opens and runs without new errors.
 - New assumptions are listed in GDD 16.3.
-- Section 8 is updated (your task moved to *Done* or removed).
+- Section 8 and `docs/WORK_SPLIT.md` are updated (task status, requests).
 - Tell your human what you changed and what is left.
 
 ## 8. Work in progress
 
-Update this table when you start and finish something, so other agents avoid the same files.
-Work areas are not assigned yet; the team will split them.
+The project is split into 6 workstreams, one per person: see **[`docs/WORK_SPLIT.md`](docs/WORK_SPLIT.md)**
+for owners, owned folders, contracts between workstreams and the first milestone.
+**Only edit the folders of your own workstream**; ask for anything else in its section 5 ("Peticiones entre bloques").
 
-| Area | Owner | Files / scenes being touched | Status |
-|---|---|---|---|
-| Run flow base (`RunManager`, placeholder phases) | Daniel | `Scripts/core/`, `Scripts/phases/`, `Scenes/phases/` | Done |
-| Casino prototype (map generator, props, stalker NPC) | David | `Scripts/singleton/`, `Scripts/interactive/`, `Scenes/main.tscn`, `Scenes/npcs/` | In progress |
+Update this table when you start and finish a task, so other agents avoid the same files.
 
-Suggested areas to split later (from GDD 12.3 / 14.2): grid & turn system (`TurnManager`, `AStarGrid2D`),
-guard AI and vision, room-based level generation, Search phase (inspection, route drawing),
-error evaluation and heist result (GDD P95), Invest phase and items (`Resource` data), menus / save /
-localization (EN/ES), **art production** (see section 9) and audio.
+| WS | Task | Owner | Files / scenes being touched | Status |
+|---|---|---|---|---|
+| 1 | Run flow base (`RunManager`, placeholder phases) | Daniel | `Scripts/core/`, `Scripts/phases/`, `Scenes/phases/` | Done |
+| — | Casino prototype (map generator, props, stalker NPC) | David | `Scripts/singleton/`, `Scripts/interactive/`, `Scenes/main.tscn`, `Scenes/npcs/` | In progress |
 
 ## 9. Art and assets
 
