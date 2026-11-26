@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://kwwmtnrs23lq" path="res://Scenes/player/player.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://5ymvg6bxnrxr" path="res://Scenes/prefabs/animated/slot_machine.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dy353gf3ic1r2" path="res://Scenes/prefabs/animated/refill_table.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://bwis38cm1xwtu" path="res://Scenes/npcs/stalker.tscn" id="5_kry3j"]
 
 [node name="Main" type="Node2D" unique_id=1017417955]
 y_sort_enabled = true
@@ -22,3 +23,6 @@ position = Vector2(174, 123)
 
 [node name="refill_table" parent="." unique_id=1986482422 instance=ExtResource("4_jjvhh")]
 position = Vector2(94, 133)
+
+[node name="Player2" parent="." unique_id=2044983803 instance=ExtResource("5_kry3j")]
+position = Vector2(245, 139)

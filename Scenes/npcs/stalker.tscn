@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bwis38cm1xwtu"]
+
+[ext_resource type="Script" uid="uid://di7jum22wxw0b" path="res://Scenes/npcs/stalker.gd" id="1_0o418"]
+[ext_resource type="SpriteFrames" uid="uid://qbpkxf542cat" path="res://Resources/Characters/adam_frames.tres" id="2_arwmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
+size = Vector2(10, 6)
+
+[node name="Player" type="CharacterBody2D" unique_id=571083691 groups=["player"]]
+z_index = 1
+motion_mode = 1
+script = ExtResource("1_0o418")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1194574169]
+position = Vector2(0, -16)
+sprite_frames = ExtResource("2_arwmo")
+animation = &"idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693274141]
+z_index = 1
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_vgqql")
